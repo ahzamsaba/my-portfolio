@@ -20,8 +20,12 @@ const Navbar = () => {
         : "bg-transparent"
     }`}>
       <div className='max-w-6xl mx-auto px-6 py-4 flex justify-between items-center'>
-        <a 
-          href="#hero"
+        <Link 
+          to="hero"
+          smooth={true}
+          duration={500}
+          spy={true}
+          offset={-80}
           className='text-lg md:text-xl font-bold group cursor-pointer'
         >
           <span className='text-purple-400 group-hover:text-white transition'>
@@ -39,7 +43,7 @@ const Navbar = () => {
           <span className='text-purple-400 group-hover:text-white transition'>
             &gt;
           </span>
-        </a>
+        </Link>
         <ul className='flex space-x-6 text-white font-medium text-sm md:text-base'>
           <li>
             <Link

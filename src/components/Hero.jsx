@@ -1,6 +1,7 @@
 import React from 'react'
 import profilePic from '../assets/profile.jpg'
 import Tilt from 'react-parallax-tilt'
+import { Link } from 'react-scroll'
 
 const Hero = () => {
   return (
@@ -25,12 +26,16 @@ const Hero = () => {
           </p>
 
           <div className="mt-6 flex gap-4 justify-center md:justify-start">
-            <a
-              href="#projects"
-              className="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded shadow-lg transition"
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-80}
+              className="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded shadow-lg transition cursor-pointer"
             >
               View Projects
-            </a>
+            </Link>
             <a
               href="/resume.pdf"
               download
