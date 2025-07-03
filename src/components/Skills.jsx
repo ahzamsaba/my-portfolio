@@ -41,10 +41,10 @@ const Skills = () => {
   return (
     <section
       id='skills'
-      className='py-20 bg-[#12002a] text-white'
+      className='py-20 bg-[#0d001e] text-white transition-colors duration-500'
     >
-      <div className='max-w-6xl mx-auto px-4'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-12 border-b-2 border-purple-500 inline-block'>
+      <div className='max-w-6xl mx-auto px-4 text-center'>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-12 border-b-2 border-purple-500 inline-block pb-2'>
           Skills
         </h2>
 
