@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { projects } from '../data/projectData'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const Projects = () => {
   const [selected, setSelected] = useState(null)
@@ -18,9 +19,18 @@ const Projects = () => {
         </p>
 
         <div className='grid md:grid-cols-3 gap-6'>
-          {projects.map((proj) => (
-            <div
+          {projects.map((proj, i) => (
+            <motion.div
               key={proj.id}
+              initial={{opacity: 0, y:50}}
+              whileInView={{opacity:1, y:0}}
+              viewport={{once: true, amount: 0.2}}
+              transition={{type: 'spring', stiffness: 100, damping:12, delay:i*0.1}}
+              whileHover={{
+                scale: 1.03,
+                y: -6,
+                transition: {type: 'tween', duration: 0.2, ease: 'easeOut'}
+              }}
               onClick={() => setSelected(proj)}
               className='bg-gray-100 dark:bg-[#1a1929] rounded-lg overflow-hidden cursor-pointer shadow-lg hover:shadow-purple-500/30 transition'
             >
@@ -45,18 +55,25 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-
+        <AnimatePresence>
         {selected && (
-          <div
+          <motion.div
             className='fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50'
             onClick={() => setSelected(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <div
+            <motion.div
               className='bg-white dark:bg-[#121020] text-black dark:text-white rounded-lg p-6 max-w-3xl w-full mx-4'
               onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 160, damping: 15 }}
             >
               <div className='flex justify-end mb-2'>
                 <button
@@ -101,9 +118,10 @@ const Projects = () => {
                   View Live
                 </a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
+        </AnimatePresence>
       </div>
     </section>
   )

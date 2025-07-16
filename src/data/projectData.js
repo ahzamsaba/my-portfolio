@@ -25,6 +25,15 @@ export const projects = [
         tech: ["React JS", "Tailwind CSS", "Appwrite", "React Router", "Vite"],
         live: "https://github.com/ahzamsaba/Ecommerce-App.git", // replace with real deployment URL
         code: "https://github.com/ahzamsaba/Ecommerce-App.git" // replace with real GitHub repo
+    },
+    {
+        id: 4,
+        title: "Wordle Game",
+        description: "A Wordle clone built with React, Tailwind, and Vite featuring hints, leaderboard, and keyboard interaction for both desktop and mobile. Backend implemented using Vercel serverless API routes. Supports turn-based logic, localStorage history, and real-time feedback with colored tiles.",
+        image: "/wordle.png", // Save your screenshot as 'wordle.png' in the public folder
+        tech: ["React JS", "Tailwind CSS", "Vite", "Vercel Serverless Functions"],
+        live: "https://wordle-game-ahzam-sabas-projects.vercel.app/", // Replace with your actual deployed URL
+        code: "https://github.com/ahzamsaba/Wordle-Game"
     }
 
 ];
