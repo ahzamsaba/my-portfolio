@@ -5,7 +5,7 @@ import Hero from './Hero'
 import Navbar from './Navbar'
 import Projects from './Projects'
 import Skills from './Skills'
-import ScrollToTop from './scrollToTop'
+import ScrollToTop from './ScrollToTop'
 
 export {
     About,
